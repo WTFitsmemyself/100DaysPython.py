@@ -1,5 +1,6 @@
 #Libraries
 import random
+import hashlib
 
 #Variables 
 rock = '''
@@ -46,3 +47,9 @@ def RockPaperScissor(choice):
 #CODE
 Selection = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors")       
 RockPaperScissor(Selection)
+
+
+
+new = "Hello how are you"
+hash = hashlib.sha256(new.encode())
+print(hash.hexdigest())
