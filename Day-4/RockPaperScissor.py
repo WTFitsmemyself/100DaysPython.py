@@ -1,6 +1,5 @@
 #Libraries
 import random
-import hashlib
 
 #Variables 
 rock = '''
@@ -30,26 +29,19 @@ scissors = '''
 ---.__(___)
 '''
 
-#Functions
-def RockPaperScissor(choice):
-    if choice == "0":
-        print(rock)
-        print("\n Computer Choose: \n\n")
-        pc_choice = random.randint(0,2)
-        print(pc_choice)
-    elif choice == "1":
-        print(paper)
-    elif choice == "2":
-        print(paper)
-    else:
-        print("invalid option")
-
 #CODE
-Selection = input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors")       
-RockPaperScissor(Selection)
+Selection = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors: "))
+pc_choice = random.randint(0,2)
 
-
-
-new = "Hello how are you"
-hash = hashlib.sha256(new.encode())
-print(hash.hexdigest())
+#in case of draw
+if pc_choice == Selection:
+    if Selection == 0:
+        print(f"You choose: \n{rock}")
+        print(f"Pc choose: \n{rock}")
+    elif Selection == 1:
+        print(f"You choose: \n{paper}")
+        print(f"Pc choose: \n{paper}")
+    elif Selection == 2:
+        print(f"You choose: \n{scissors}")
+        print(f"Pc choose: \n{scissors}")
+    print("Result is Draw")
