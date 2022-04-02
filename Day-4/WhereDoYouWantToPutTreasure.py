@@ -10,6 +10,6 @@ onebyone=selection.split()
 int_row = int(onebyone[0]) - 1
 int_col = int(onebyone[1]) - 1
 
-map[int_row][int_col] = "x"
+map[int_col][int_row] = "x"
 
 print(f" {row1}\n {row2}\n {row3}\n")
