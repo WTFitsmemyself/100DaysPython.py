@@ -1,6 +1,6 @@
 import hashlib
 
-hash_matn = "Hossein nouri"
-result = hashlib.sha256(hash_matn.encode())
+hash_matn = "Hosseinnouri"
+result = hashlib.sha512(hash_matn.encode())
 hashasli = result.hexdigest()
 print(hashasli)
