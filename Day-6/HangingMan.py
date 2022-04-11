@@ -5,10 +5,19 @@ import random
 word_to_play = ['birthday', 'beekepper', 'banana', 'apple', 'orange', 'flavor']
 pc_choice = random.choice(word_to_play)
 len_word = len(pc_choice)
+max_choice = 6
+NumberOfChoices = 0
 
-for i in range(len_word):
-    print("_ ",end = " ")
-        
+#functions
+def ShowBlanks(): 
+    for i in range(len_word):
+        blanks = print("_",end = " ")
+    return blanks
+
+def clear():
+    print('\x1bc')
+
+
 banner = ''' _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -72,5 +81,10 @@ full_dead_banner = '''      _______
      |
     _|___'''
 
-print("\n")   
-first_letter = input("\nPlease enter a letter: ").lower()
+print(banner)
+
+while NumberOfChoices < max_choice:
+    first_letter = input("\nGuess a letter: ").lower()
+    blank = ShowBlanks()
+    print(f"\n{blank}")
+    
