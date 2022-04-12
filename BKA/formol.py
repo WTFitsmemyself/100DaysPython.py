@@ -23,7 +23,6 @@ Shomare_Serial = 0
 weight = ['8','7','6','5','4','3','2','9','1','9','8','7','6']
 temp = [1, 2, 3, 4, 5, 6, 7, "8"]
 Shomare_Serial_Bedone_Tabdil_harf_ha = []
-
 #Converting year to alphabetic year
 if tarikh__shamsi[0] == 1401:
     sal = "A"
