@@ -7,17 +7,22 @@ pc_choice = random.choice(word_to_play)
 len_word = len(pc_choice)
 max_choice = 6
 NumberOfChoices = 0
-
+blanks_list = ['_'] * len_word
 #functions
 def ShowBlanks(): 
-    for i in range(len_word):
-        blanks = print("_",end = " ")
-    return blanks
+    for i in range(len(blanks_list)):
+        print(blanks_list[i],end='  ')
 
 def clear():
     print('\x1bc')
 
-
+def CheckLetter(letter):
+    for i in range(len(pc_choice)):
+        if letter == pc_choice[i]:
+            print("Rights")
+        else:
+            print("Wrong")
+    
 banner = ''' _                                             
 | |                                            
 | |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -83,8 +88,10 @@ full_dead_banner = '''      _______
 
 print(banner)
 
-while NumberOfChoices < max_choice:
-    first_letter = input("\nGuess a letter: ").lower()
-    blank = ShowBlanks()
-    print(f"\n{blank}")
-    
+# while NumberOfChoices < max_choice:
+print(ShowBlanks())
+print(f"Chosen word is {pc_choice}")
+guess = input("\nGuess a letter: ").lower()
+CheckLetter(guess)
+
+
