@@ -9,10 +9,7 @@ max_choice = 6
 NumberOfChoices = 0
 blanks_list = ['_'] * len_word
 #functions
-def ShowBlanks(): 
-    for i in range(len(blanks_list)):
-        print(blanks_list[i],end='  ')
-
+        
 def clear():
     print('\x1bc')
 
@@ -89,9 +86,18 @@ full_dead_banner = '''      _______
 print(banner)
 
 # while NumberOfChoices < max_choice:
-print(ShowBlanks())
 print(f"Chosen word is {pc_choice}")
-guess = input("\nGuess a letter: ").lower()
-CheckLetter(guess)
+while NumberOfChoices < max_choice:
+    for i in range(len(blanks_list)):
+        if blanks_list[i] != "_":
+            print("You Win")
+        else:
+            guess = input("\nGuess a letter: ").lower()
+            for i in range(len(pc_choice)):
+                if guess == pc_choice[i]:
+                    blanks_list[i] = pc_choice[i]
+            NumberOfChoices += 1
+            print(blanks_list)
 
-
+print(full_dead_banner)
+print("You Lost")
