@@ -54,5 +54,3 @@ elif user_choice == 'decode':
     decode(MessageUser,ShiftNumber)
     print("\nYour decode Cipher is: ")
     print(''.join(shiftString))
-
-    
