@@ -1,7 +1,10 @@
 # Date: 2022/04/07
 # Import Libraries
+from importlib.resources import contents
+from tkinter import W
 import tarikh
 import datetime
+import os.path
 
 #Date Conveersion
 Date = str(datetime.date.today())
@@ -10,8 +13,15 @@ year_now = int(date_spilit[0])
 month_now = int(date_spilit[1])
 day_now = int(date_spilit[2])
 
+#Check if file exists
+file = os.path.isfile('./counter.txt')
+if file == False:
+    file = open("counter.txt","w+")
+    file.write("0")
+    file.close()
+
 # Creating essentional variables for reaching to Final Number
-last_gardon_number = int(input("What was the last gardon you prouduce last day?: "))
+last_gardon_number = int(input("How many Gardon you produced today?: "))
 Shomare_Tamin_Konande = "S"
 Shomare_Sazande = "F9" 
 Shomare_Ghate = "AS"
@@ -23,6 +33,7 @@ Shomare_Serial = 0
 weight = ['8','7','6','5','4','3','2','9','1','9','8','7','6']
 temp = [1, 2, 3, 4, 5, 6, 7, "8"]
 Shomare_Serial_Bedone_Tabdil_harf_ha = []
+
 #Converting year to alphabetic year
 if tarikh__shamsi[0] == 1401:
     sal = "A"
@@ -199,8 +210,8 @@ def m(x):
     # print(f"m : {m}")
     return m
 
-
-for i in range(last_gardon_number+1, 100000):
+f = open("./counter.txt","r")
+for i in range(int(f.read())+1, last_gardon_number+1):
     if i < 10:
         Shomare_Serial = "0000" + str(i)
         Shomare_Serial_Bedone_Tabdil_harf_ha = Shomare_Tamin_Konande + Shomare_Sazande + Shomare_Ghate + str(sal) + str(mah) + str(rooz) + str(Shomare_Serial)
@@ -236,3 +247,8 @@ for i in range(last_gardon_number+1, 100000):
         adad14om = m(adad)
         print(f"Gardon {i} = {Shomare_Serial_Bedone_Tabdil_harf_ha} {adad14om}")
         print("----------------------------------------------------------------")
+        
+str_last_num = str(last_gardon_number)
+f = open("./counter.txt","w")
+f.write(str_last_num)
+f.close
