@@ -48,6 +48,7 @@ def show_operations():
     print("-")
     print("*")
     print("/")
+    
 def calculator():
     print(banner)
     first_num = float(input("What's the first number: "))
