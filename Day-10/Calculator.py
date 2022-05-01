@@ -1,3 +1,4 @@
+from os import system, name
 banner = ''' _____________________
 |  _________________  |
 | | Hosyn           | |
@@ -12,7 +13,16 @@ banner = ''' _____________________
 | | . | 0 | = | | / | |
 | |___|___|___| |___| |
 |_____________________|'''
+def clear():
+    
+    # for windows
+    if name == 'nt':
+        _ = system('cls')
 
+    # for mac and linux(here, os.name is 'posix')
+    else:
+        _ = system('clear')
+  
 def calc(first_num, second_num, operation):
     if operation == "+":
         result = first_num + second_num
@@ -38,27 +48,29 @@ def show_operations():
     print("-")
     print("*")
     print("/")
-
-def first():
+def calculator():
+    print(banner)
     first_num = float(input("What's the first number: "))
-    show_operations()
-    operation = input("Pick and operation: ")
-    second_num = float(input("What's the second number: "))
-    result_feli = calc(first_num, second_num, operation)
-    return result_feli
 
-def second(result):
-    first_num = result
-    operation = input("Pick and operation: ")
-    second_num = float(input("What's the second number: "))
-    result_feli = calc(first_num, second_num, operation)
-    return result_feli
-        
-print(banner)
-result_feli = first()
-yORn = input(f"Type 'y' to continue calculating with {result_feli}, or type 'n' to start a new calculation: ")
-if yORn == "y":
-    second(result_feli)
-else:
-    first()
-        
+    def first():
+        """First operation is calculated here"""
+        show_operations()
+        operation = input("Pick and operation: ")
+        second_num = float(input("What's the second number: "))
+        result_feli = calc(first_num, second_num, operation)
+        return result_feli
+            
+
+    is_continue = True
+    while is_continue:
+        result_feli = first()
+        yORn = input(f"Type 'y' to continue calculating with {result_feli}, or type 'n' to start a new calculation: ")
+        if yORn == "y":
+            clear()
+            first_num = result_feli
+        elif yORn == "n":
+            clear()
+            is_continue = False
+            calculator()
+
+calculator()
