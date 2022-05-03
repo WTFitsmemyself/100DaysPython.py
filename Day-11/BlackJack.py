@@ -50,11 +50,14 @@ def hitOrGO(AnsUser):
         return False
 
 def edameDare(RandomNumUser,RandomNumPC):
+    sumPC = 0
     yourCards.append(cards[RandomNumUser])
     computerCards.append(cards[RandomNumPC])
     sumScore = is_lose(yourCards)
+    for i in range(0,len(computerCards)):
+        sumPC += computerCards[i]
     print(f"Your cards: {yourCards}, Current Score: {sumScore}")
-    print(f"Computer's hand: [{computerCards[0]}, {computerCards[1]}]")
+    print(f"Computer's hand: {computerCards}, Current Score PC: {sumPC}")
     if sumScore > 21:
         print(f"You Lose")
         exit(0)
@@ -68,7 +71,9 @@ def who_win(listUser, listPC):
         SumPC += listPC[i]
     print(f"Your final hand is {listUser} and your score is {SumUser}")
     print(f"Computer final hand is {listPC} and PC score is {SumPC}")
-    if SumPC > SumUser and SumPC < 22:
+    if SumPC == SumUser:
+        print("Scores are equal, Game Draw")
+    elif SumPC > SumUser and SumPC < 22:
         print("You Lose")
     else:
         print("You Win")
@@ -102,4 +107,5 @@ while is_continue:
             if HitOrPass == 'y':
                 edameDare(forthRandUser,forthRandPC)
         who_win(yourCards,computerCards)
+        print("-------------------------------------------------")
         
