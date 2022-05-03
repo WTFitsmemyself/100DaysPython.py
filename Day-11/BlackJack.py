@@ -39,10 +39,8 @@ def RandomNumbersSelection():
 
 def is_lose(list):
     sum = 0
-    for i in range(0,len(list)-1):
+    for i in range(0,len(list)):
         sum += list[i]
-        if sum > 21:
-            print("Computer Wins")
     return sum
 
 def hitOrGO(AnsUser):
@@ -51,16 +49,26 @@ def hitOrGO(AnsUser):
     elif AnsUser == 'n':
         return False
 
+def edameDare(RandomNumUser,RandomNumPC):
+    yourCards.append(cards[RandomNumUser])
+    computerCards.append(cards[RandomNumPC])
+    sumScore = is_lose(yourCards)
+    print(f"Your cards: {yourCards}, Current Score: {sumScore}")
+    print(f"Computer's hand: [{computerCards[0]}, {computerCards[1]}]")
+    if sumScore > 21:
+        print(f"You Lose")
+        exit(0)
+    
 def who_win(listUser, listPC):
     SumUser = 0
     SumPC = 0
-    for i in range(0,len(listUser)-1):
+    for i in range(0,len(listUser)):
         SumUser += listUser[i]
-    for i in range(0,len(listPC)-1):
+    for i in range(0,len(listPC)):
         SumPC += listPC[i]
-    print(f"Your final hand is {listUser}")
-    print(f"Computer final hand is {listPC}")
-    if SumPC > SumUser:
+    print(f"Your final hand is {listUser} and your score is {SumUser}")
+    print(f"Computer final hand is {listPC} and PC score is {SumPC}")
+    if SumPC > SumUser and SumPC < 22:
         print("You Lose")
     else:
         print("You Win")
@@ -73,8 +81,8 @@ while is_continue:
         print("GoodBye")
         exit(0)
     elif WannaPlay == 'y':
-        yourCards = [0,0,0,0,0]
-        computerCards = [0,0,0,0,0]
+        yourCards = [0,0]
+        computerCards = [0,0]
         firstRanduser, SecondRanduser, firstRandPC, SecondRandPC, thirdRanduser, thirdRandPC, forthRandUser, forthRandPC, fifthRanduser, fifthRanduser= RandomNumbersSelection()
         yourCards[0] = cards[firstRanduser]
         yourCards[1] = cards[SecondRanduser]
@@ -86,10 +94,12 @@ while is_continue:
         print(f"Your cards: [{yourCards[0]}, {yourCards[1]}], Current Score: {sumScore}")
         print(f"Computer's first card: {computerCards[0]}")
         HitOrPass = input("Type 'y' to get another card, type 'n' to pass: ").lower()
-        if hitOrGO(HitOrPass):
-            yourCards[2] = cards[thirdRanduser]
-            computerCards[2] = cards[thirdRandPC]
-            is_lose(yourCards)
-        else:
-            who_win(yourCards,computerCards)
+        while hitOrGO(HitOrPass) == True:
+            edameDare(thirdRanduser,thirdRandPC)
+            HitOrPass = input("Type 'y' to get another card, type 'n' to pass: ").lower()
+            if HitOrPass == 'n':
+                hitOrGO(HitOrPass)
+            if HitOrPass == 'y':
+                edameDare(forthRandUser,forthRandPC)
+        who_win(yourCards,computerCards)
         
