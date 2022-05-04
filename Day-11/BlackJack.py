@@ -108,4 +108,3 @@ while is_continue:
                 edameDare(forthRandUser,forthRandPC)
         who_win(yourCards,computerCards)
         print("-------------------------------------------------")
-        
