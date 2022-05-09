@@ -23,12 +23,14 @@ MENU = {
         "cost": 3.0,
     }
 }
+
 Money = 0
 resources = {
     "water": 300,
     "milk": 200,
     "coffee": 100,
 }
+
 def report(request):
     if request == "report":
         waterMeasure = resources["water"]
@@ -53,22 +55,60 @@ def MoneyCalculate():
     dimesFinal = dimes * 0.10
     quartersFinal = quarters * 0.25
     FinalAmount = penniesFinal + nicklesFinal + dimesFinal + quartersFinal
-    print(FinalAmount)
-    
     return FinalAmount
 
 def IsMoneyEnough(UserOrder, AmountUser):
     MoneyNedded = MENU[UserOrder]["cost"]
+    ChangeOfMoney = AmountUser - MoneyNedded  
     if MoneyNedded > AmountUser:
         print(f"Sorry Not enough money to buy {UserOrder}")
+        return False
+    else:
+        print(f"Money you paid is {AmountUser}")
+        print(f"Here is your change: {ChangeOfMoney}")
+        print(f"Here is your {UserOrder}!")
+        return True
         
+        
+def ResoucesUpdate(UserOrder):
+    global Money
+    if UserOrder == "espresso":
+        WaterOrder = MENU[UserOrder]["ingredients"]["water"]
+        CoffeeOrder = MENU[UserOrder]["ingredients"]["coffee"]
+    else:
+        WaterOrder = MENU[UserOrder]["ingredients"]["water"]
+        CoffeeOrder = MENU[UserOrder]["ingredients"]["coffee"]
+        MilkOrder = MENU[UserOrder]["ingredients"]["milk"]
+    WatterResource = resources["water"]
+    MilkResource = resources["milk"]
+    CoffeeResource = resources["coffee"]
+    if UserOrder == "espresso":
+        finalWatter = WatterResource - WaterOrder 
+        finalCoffee = CoffeeResource - CoffeeOrder
+        resources["coffee"] = finalCoffee
+        resources["water"] = finalWatter
+        Money += 1.5
+    else:
+        finalWatter = WatterResource - WaterOrder 
+        finalCoffee = CoffeeResource - CoffeeOrder
+        finalMilk = MilkResource - MilkOrder
+        resources["coffee"] = finalCoffee
+        resources["water"] = finalWatter
+        resources["milk"] = finalMilk
+        if UserOrder == "latte":
+            Money += 2.5
+        else:
+            Money += 3
         
 def Machine():       
     UserInput = input("What would you like? (espresso/latte/cappuccino): ").lower()
     if UserInput == "espresso" or UserInput == "latte" or UserInput == "cappuccino" or UserInput == "report":    
         report(UserInput)
         Money_Neded = MoneyCalculate()
-        IsMoneyEnough(UserInput, Money_Neded)
+        OrderCompelete = IsMoneyEnough(UserInput, Money_Neded)
+        if OrderCompelete == True:
+            ResoucesUpdate(UserInput)
+            Machine()
     else:
         exit(1)
 
