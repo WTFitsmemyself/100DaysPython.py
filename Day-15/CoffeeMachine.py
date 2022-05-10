@@ -1,3 +1,5 @@
+Money = 0
+
 MENU = {
     "espresso": {
         "ingredients": {
@@ -24,7 +26,6 @@ MENU = {
     }
 }
 
-Money = 0
 resources = {
     "water": 300,
     "milk": 200,
