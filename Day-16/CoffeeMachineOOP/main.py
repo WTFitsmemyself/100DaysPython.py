@@ -1,4 +1,4 @@
-from menu import Menu, MenuItem
+from menu import Menu
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 from os import system, name
@@ -17,6 +17,7 @@ money_machine = MoneyMachine()
 is_on = True
 
 while is_on:
+    clear()
     UserInput = input(f"What do you want? {menu.get_items()}: ").lower()
     if UserInput == 'off':
         is_on = False
@@ -25,10 +26,6 @@ while is_on:
         money_machine.report()
     else:
         item = menu.find_drink(UserInput)
-        enough = coffee_maker.is_resource_sufficient(item)
-        if enough:
-            cost_coffee = money_machine.process_coins()
-            Ready = money_machine.make_payment(cost_coffee)
-            print(Ready)
-            
-    
+        if coffee_maker.is_resource_sufficient(item):
+            if money_machine.make_payment(item.cost):
+                coffee_maker.make_coffee(item)
