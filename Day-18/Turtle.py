@@ -1,11 +1,14 @@
 from turtle import Turtle, Screen
 
 Tim = Turtle()
-Tim.shape("turtle")
+Tim.shape("arrow")
 Tim.color("#994184")
+Tim.pensize(3)
 screen = Screen()
-while True:
-    Tim.forward(100)
-    Tim.right(90)
-    
+for _ in range(15):
+    Tim.forward(10)
+    Tim.penup()
+    Tim.forward(10)
+    Tim.pendown()
+
 screen.exitonclick()
