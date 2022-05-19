@@ -1,22 +1,21 @@
 from random import choice
 from turtle import Turtle, Screen
 
-movement = 10
+movement_step = 10
 max_movement_line = 1000
 dot_size = 5
 
-colors = ["medium spring green",
-          "dark cyan",
-          "floral white",
-          "light pink",
-          "medium violet red",
-          "thistle",
-          "peach puff",
-          "orange",
-          "moccasin",
-          "olive",
-          "green yellow",
-          "dark orchid"]
+colors = ["#8a3ec9",
+          "#c7a6cd",
+          "#fefddc",
+          "#197168",
+          "#2ebe03",
+          "#fed401",
+          "#e37929",
+          "#648ade",
+          "#9cd0dd",
+          "#f6f595",
+          "#b43856"]
 
 
 def random_color():
@@ -24,6 +23,7 @@ def random_color():
 
 
 obj_s = Screen()
+obj_s.bgcolor("#2f1b35")
 obj_t = Turtle()
 obj_t.speed("fastest")
 
@@ -41,11 +41,11 @@ def movement():
         for j in range(0, 100):
             obj_t.dot(dot_size, random_color())
             obj_t.penup()
-            obj_t.forward(movement)
+            obj_t.forward(movement_step)
             obj_t.pendown()
         obj_t.setheading(90)
         obj_t.penup()
-        obj_t.forward(movement)
+        obj_t.forward(movement_step)
         obj_t.setheading(180)
         obj_t.forward(max_movement_line)
         obj_t.setheading(0)
@@ -54,5 +54,5 @@ def movement():
 
 init_move()
 movement()
-
+obj_t.ht()
 obj_s.exitonclick()
