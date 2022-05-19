@@ -1,5 +1,10 @@
 from random import choice
 from turtle import Turtle, Screen
+import csv
+
+hex_file = open("./hex_code.csv", 'w')
+
+writer = csv.writer(hex_file)
 
 movement_step = 10
 max_movement_line = 1000
@@ -19,7 +24,9 @@ colors = ["#8a3ec9",
 
 
 def random_color():
-    return choice(colors)
+    color_selected = choice(colors)
+    writer.writerow(str(color_selected).split(","))
+    return color_selected
 
 
 obj_s = Screen()
@@ -55,4 +62,5 @@ def movement():
 init_move()
 movement()
 obj_t.ht()
+hex_file.close()
 obj_s.exitonclick()
