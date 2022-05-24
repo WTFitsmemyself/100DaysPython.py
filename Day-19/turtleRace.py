@@ -31,12 +31,12 @@ turtle_settle()
 while match_is_on:
     for turtles in all_turtles:
         if turtles.xcor() > 230:
+            match_is_on = False
             winner = turtles.pencolor()
             if winner == user_bet:
                 print("You Win")
             else:
                 print(f"Your Loose color {winner} is winner")
-            match_is_on = False
 
         rand_distance = randint(0, 10)
         turtles.forward(rand_distance)
