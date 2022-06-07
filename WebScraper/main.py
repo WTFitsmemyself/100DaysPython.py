@@ -11,7 +11,7 @@ driver.get("https://www.numbeo.com/cost-of-living/country_result.jsp?country=Ita
 
 content = driver.page_source
 soup = BeautifulSoup(content, "html.parser")
-for a in soup.findAll('a', href=True, attrs={'class': 'innerWidth'}):
+for a in soup.findAll('div', href=True, attrs={'class': 'innerWidth'}):
     name = a.find('div', attrs={'class': 'purple_light'})
     salaries = a.find('div', attrs={'class': 'first_currency'})
     cost = a.find('div', attrs={'class': 'in_other_currency'})
