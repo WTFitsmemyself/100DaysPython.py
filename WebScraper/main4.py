@@ -4,9 +4,6 @@ from bs4 import BeautifulSoup as Bs
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome()
-driver.get("https://www.numbeo.com/cost-of-living/country_result.jsp?country=Iran")
-print(driver.find_element(By.XPATH, "/html/body/div[2]/div[2]/ul/li[1]"))
 names = []
 salary = []
 costs = []
@@ -21,7 +18,7 @@ for i in countries:
     url = base_url + query_param
     response = requests.get(url)
     soup = Bs(response.content, "html.parser")
-    table = soup.find_all("span").text
+    table = soup.find_all("span")[6].text
 
     print(table)
     f.write(str(soup))
