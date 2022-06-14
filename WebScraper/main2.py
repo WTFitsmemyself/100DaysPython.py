@@ -2,6 +2,7 @@
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
+
 base_url = "https://www.numbeo.com/cost-of-living/country_result.jsp"
 all_pages_reviews = []
 contires = ["Italy", "Iran"]
@@ -29,4 +30,4 @@ def scraper():
 reviews = scraper()
 i = range(1, len(reviews)+1)
 reviews_df = pd.DataFrame({'review': reviews}, index=i)
-reviews_df.to_csv('reviews.txt', sep='t')
+reviews_df.to_csv('reviews.csv', sep='t')
