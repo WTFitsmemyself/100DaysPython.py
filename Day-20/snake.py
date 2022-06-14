@@ -36,10 +36,20 @@ class Snake(Turtle):
         while True:
             x_value = self.head.xcor()
             y_value = self.head.ycor()
-            return x_value,y_value
+            return x_value, y_value
 
     def snake_lose_or_not(self):
-        if self.cord_of_snake() > self.MAXIMUM_MOVE:
+        x_value, y_value = self.cord_of_snake()
+        if x_value == self.MAXIMUM_MOVE[1]:
+            print("You loose")
+            exit(1)
+        elif x_value == self.MAXIMUM_MOVE[0]:
+            print("You loose")
+            exit(1)
+        elif y_value == self.MAXIMUM_MOVE[0]:
+            print("You loose")
+            exit(1)
+        elif y_value == self.MAXIMUM_MOVE[1]:
             print("You loose")
             exit(1)
 
