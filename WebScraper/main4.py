@@ -1,8 +1,6 @@
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup as Bs
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 
 names = []
 salary = []
