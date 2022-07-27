@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/WebScraper/Countries/products.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/WebScraper/products.csv">
           <value>
             <Attribute>
