@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup as Bs
 from lxml import etree
+from lxml.cssselect import CSSSelector
 
 names = []
 salary = []
@@ -19,6 +20,7 @@ for country in countries:
     url = base_url + query_param
     response = requests.get(url)
     soup = Bs(response.content, "html.parser")
+    pretty = soup.prettify()
 
     f.write(str(soup))
     f.close()

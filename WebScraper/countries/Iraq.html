@@ -258,27 +258,8 @@ $('#city_selector_menu_city_id').toggleClass('city-selector-menu');
 </select>
 </form>
 </nav>
-<div id="modal_after_a_delay" style="display: none;" title="Improve Our Data Quality">
-<div style="text-align: center; width: 100%; height: 100%; vertical-align: middle; margin-top: 8px; margin-bottom: 8px">Comparisons improve with every new data that you enter. <br/>
-Do you live in Chicago, IL? <a class="discreet_link" href="https://www.numbeo.com/common/form.jsp?country=United+States&amp;city=Chicago%2C+IL&amp;tracking=formForModal">Tell us some prices in Chicago.</a><br/>
-</div></div>
-<script>
-whenDocReady(function() {
-  setTimeout(function() {
-  jQuery('#modal_after_a_delay').dialog({
- modal: false, 
-     position: { my: 'center', at: 'left+40% bottom-25%', of: window },
-     beforeClose: function( event, ui ) {
-        jQuery.post('https://www.numbeo.com/common/setAvoidAskingForEnterData.jsp');     },
-     show: {
-        effect: "slide",
-        duration: 3000
-      },width: 650});
-  }, 30000);
-});
-</script>
 <div class="seeding-call table_color summary limit_size_ad_right padding_lower other_highlight_color">
-<p><span style="font-weight: 600;">Summary</span>:<ul><li class="disabled_on_small_devices_li">Family of four estimated monthly costs are <span class="emp_number">1,625.93$</span> without rent.</li><li class="disabled_on_small_devices_li">A single person estimated monthly costs are <span class="emp_number">471.25$</span> without rent.</li><li>Cost of living in <span class="purple_light">Iraq</span> is, on average, 54.65%<span class="green_light"> lower</span> than in <span class="rose_light">United States</span>.</li><li>Rent in <span class="purple_light">Iraq</span> is, on average, 79.81%<span class="green_light"> lower</span> than in <span class="rose_light">United States</span>.</li></ul></p></div>
+<p><span style="font-weight: 600;">Summary</span>:<ul><li class="disabled_on_small_devices_li">Family of four estimated monthly costs are <span class="emp_number">1,626.98$</span> without rent.</li><li class="disabled_on_small_devices_li">A single person estimated monthly costs are <span class="emp_number">471.62$</span> without rent.</li><li>Cost of living in <span class="purple_light">Iraq</span> is, on average, 12.21%<span class="green_light"> lower</span> than in <span class="rose_light">Iran</span>.</li><li>Rent in <span class="purple_light">Iraq</span> is, on average, 42.21%<span class="green_light"> lower</span> than in <span class="rose_light">Iran</span>.</li></ul></p></div>
 <aside><div class="seeding-call disabled_on_small_devices">
 <span class="do_you_live_in">Do you live in <span class="purple_light">Iraq</span>? <span class="we_need_your_help"><a class="enterDataA" href="https://www.numbeo.com/common/form.jsp?country=Iraq&amp;returnUrl=https%3A%2F%2Fwww.numbeo.com%2Fcost-of-living%2Fcountry_result.jsp%3Fcountry%3DIraq%26displayCurrency%3DUSD">Add data for Iraq</a> </span></span></div></aside>
 <nav>
@@ -451,7 +432,7 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <span class="small_font small_space_desktop"><a href="https://www.numbeo.com/common/currency_settings.jsp?return=/cost-of-living/country_result.jsp?country=Iraq" rel="nofollow">Sticky Currency</a></span>
     
 <span class="small_font">
-<a href="https://www.numbeo.com/common/measurement_settings.jsp?returnUrl=https%3A%2F%2Fwww.numbeo.com%2Fcost-of-living%2Fcountry_result.jsp%3Fcountry%3DIraq%26displayCurrency%3DUSD" rel="nofollow">Switch to metric measurement units</a></span>
+<a href="https://www.numbeo.com/common/measurement_settings.jsp?returnUrl=https%3A%2F%2Fwww.numbeo.com%2Fcost-of-living%2Fcountry_result.jsp%3Fcountry%3DIraq%26displayCurrency%3DUSD" rel="nofollow">Switch to US measurement units</a></span>
 </form>
 </nav>
 <table class="data_wide_table new_bar_table"><tr> <th class="highlighted_th prices"><span class="category_icon_wrapper"><img alt="" class="category_icon" src="https://www.numbeo.com/images/categories/baseline-local-dining.svg"/>
@@ -474,12 +455,12 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <span class="barTextLeft">
 5.00</span><span class="barLeft" style="width: 12px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 11px;"></span><span class="barTextRight">8.37</span></td>
 </tr>
-<tr><td class="tr_highlighted">Domestic Beer (1 pint draught) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">1.85 $</span></td>
+<tr><td class="tr_highlighted">Domestic Beer (0.5 liter draught) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">1.85 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
 1.03</span><span class="barLeft" style="width: 15px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 61px;"></span><span class="barTextRight">5.00</span></td>
 </tr>
-<tr><td>Imported Beer (12 oz small bottle) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">3.00 $</span></td>
+<tr><td>Imported Beer (0.33 liter bottle) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">3.00 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
 1.50</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 32px;"></span><span class="barTextRight">5.00</span></td>
@@ -489,12 +470,12 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <span class="barTextLeft">
 0.68</span><span class="barLeft" style="width: 33px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 45px;"></span><span class="barTextRight">4.17</span></td>
 </tr>
-<tr><td>Coke/Pepsi (12 oz small bottle) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.44 $</span></td>
+<tr><td>Coke/Pepsi (0.33 liter bottle) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.44 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
 0.34</span><span class="barLeft" style="width: 11px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 44px;"></span><span class="barTextRight">0.84</span></td>
 </tr>
-<tr><td class="tr_highlighted">Water (12 oz small bottle)  </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.23 $</span></td>
+<tr><td class="tr_highlighted">Water (0.33 liter bottle)  </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.23 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
 0.17</span><span class="barLeft" style="width: 12px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 58px;"></span><span class="barTextRight">0.50</span></td>
@@ -504,70 +485,70 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <div class="category_title">Markets</div></th> <th class="highlighted_th th_no_highlight_a_right prices"> <a class="edit_href" href="https://www.numbeo.com/common/form.jsp?country=Iraq&amp;returnUrl=https%3A%2F%2Fwww.numbeo.com%2Fcost-of-living%2Fcountry_result.jsp%3Fcountry%3DIraq%26displayCurrency%3DUSD&amp;current=1&amp;section=true&amp;tracking=editHref" rel="nofollow"><img alt="" src="https://www.numbeo.com/images/baseline-edit.svg" style="vertical-align: baseline; display: inline-block;"/><span class="edit_link"> Edit </span></a></th>
 <th class="th_no_highlight prices"></th>
 </tr>
-<tr><td>Milk (regular), (1 gallon) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">4.08 $</span></td>
+<tr><td>Milk (regular), (1 liter) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">1.08 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-2.61</span><span class="barLeft" style="width: 17px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 19px;"></span><span class="barTextRight">5.68</span></td>
+0.69</span><span class="barLeft" style="width: 17px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 19px;"></span><span class="barTextRight">1.50</span></td>
 </tr>
-<tr><td class="tr_highlighted">Loaf of Fresh White Bread (1 lb) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.71 $</span></td>
+<tr><td class="tr_highlighted">Loaf of Fresh White Bread (500g) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.78 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
-0.31</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 51px;"></span><span class="barTextRight">1.55</span></td>
+0.34</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 51px;"></span><span class="barTextRight">1.71</span></td>
 </tr>
-<tr><td>Rice (white), (1 lb) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.61 $</span></td>
+<tr><td>Rice (white), (1kg) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">1.35 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-0.38</span><span class="barLeft" style="width: 18px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 23px;"></span><span class="barTextRight">0.91</span></td>
+0.84</span><span class="barLeft" style="width: 18px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 23px;"></span><span class="barTextRight">2.00</span></td>
 </tr>
 <tr><td class="tr_highlighted">Eggs (regular) (12) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">1.69 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
 1.00</span><span class="barLeft" style="width: 19px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 20px;"></span><span class="barTextRight">2.39</span></td>
 </tr>
-<tr><td>Local Cheese (1 lb) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">2.10 $</span></td>
+<tr><td>Local Cheese (1kg) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">4.64 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-0.94</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 51px;"></span><span class="barTextRight">4.54</span></td>
+2.07</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 51px;"></span><span class="barTextRight">10.00</span></td>
 </tr>
-<tr><td class="tr_highlighted">Chicken Fillets (1 lb) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">1.67 $</span></td>
+<tr><td class="tr_highlighted">Chicken Fillets (1kg) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">3.69 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
-0.93</span><span class="barLeft" style="width: 21px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 18px;"></span><span class="barTextRight">2.29</span></td>
+2.04</span><span class="barLeft" style="width: 21px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 18px;"></span><span class="barTextRight">5.04</span></td>
 </tr>
-<tr><td>Beef Round (1 lb) (or Equivalent Back Leg Red Meat) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">4.55 $</span></td>
+<tr><td>Beef Round (1kg) (or Equivalent Back Leg Red Meat) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">10.03 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-3.12</span><span class="barLeft" style="width: 14px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 12px;"></span><span class="barTextRight">5.70</span></td>
+6.88</span><span class="barLeft" style="width: 14px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 12px;"></span><span class="barTextRight">12.56</span></td>
 </tr>
-<tr><td class="tr_highlighted">Apples (1 lb) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.44 $</span></td>
+<tr><td class="tr_highlighted">Apples (1kg) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.98 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
-0.27</span><span class="barLeft" style="width: 18px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 35px;"></span><span class="barTextRight">0.76</span></td>
+0.60</span><span class="barLeft" style="width: 18px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 35px;"></span><span class="barTextRight">1.67</span></td>
 </tr>
-<tr><td>Banana (1 lb) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.47 $</span></td>
+<tr><td>Banana (1kg) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">1.03 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-0.36</span><span class="barLeft" style="width: 10px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 31px;"></span><span class="barTextRight">0.76</span></td>
+0.80</span><span class="barLeft" style="width: 10px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 31px;"></span><span class="barTextRight">1.68</span></td>
 </tr>
-<tr><td class="tr_highlighted">Oranges (1 lb) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.45 $</span></td>
+<tr><td class="tr_highlighted">Oranges (1kg) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.99 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
-0.29</span><span class="barLeft" style="width: 16px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 34px;"></span><span class="barTextRight">0.76</span></td>
+0.65</span><span class="barLeft" style="width: 16px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 34px;"></span><span class="barTextRight">1.68</span></td>
 </tr>
-<tr><td>Tomato (1 lb) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.31 $</span></td>
+<tr><td>Tomato (1kg) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.69 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-0.15</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 23px;"></span><span class="barTextRight">0.45</span></td>
+0.33</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 23px;"></span><span class="barTextRight">1.00</span></td>
 </tr>
-<tr><td class="tr_highlighted">Potato (1 lb) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.28 $</span></td>
+<tr><td class="tr_highlighted">Potato (1kg) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.62 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
-0.16</span><span class="barLeft" style="width: 21px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 30px;"></span><span class="barTextRight">0.45</span></td>
+0.34</span><span class="barLeft" style="width: 21px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 30px;"></span><span class="barTextRight">1.00</span></td>
 </tr>
-<tr><td>Onion (1 lb) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.27 $</span></td>
+<tr><td>Onion (1kg) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.59 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-0.15</span><span class="barLeft" style="width: 19px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 21px;"></span><span class="barTextRight">0.38</span></td>
+0.34</span><span class="barLeft" style="width: 19px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 21px;"></span><span class="barTextRight">0.84</span></td>
 </tr>
 <tr><td class="tr_highlighted">Lettuce (1 head) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.65 $</span></td>
 <td class="priceBarTd tr_highlighted">
@@ -577,7 +558,7 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <tr><td>Water (1.5 liter bottle) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">0.49 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-0.21</span><span class="barLeft" style="width: 27px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 35px;"></span><span class="barTextRight">0.84</span></td>
+0.21</span><span class="barLeft" style="width: 27px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 36px;"></span><span class="barTextRight">0.84</span></td>
 </tr>
 <tr><td class="tr_highlighted">Bottle of Wine (Mid-Range) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">10.24 $</span></td>
 <td class="priceBarTd tr_highlighted">
@@ -589,7 +570,7 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <span class="barTextLeft">
 0.84</span><span class="barLeft" style="width: 21px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 50px;"></span><span class="barTextRight">3.00</span></td>
 </tr>
-<tr><td class="tr_highlighted">Imported Beer (12 oz small bottle) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">2.05 $</span></td>
+<tr><td class="tr_highlighted">Imported Beer (0.33 liter bottle) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">2.05 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
 1.25</span><span class="barLeft" style="width: 19px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 46px;"></span><span class="barTextRight">4.00</span></td>
@@ -619,20 +600,20 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <span class="barTextLeft">
 1.68</span><span class="barLeft" style="width: 15px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 18px;"></span><span class="barTextRight">3.42</span></td>
 </tr>
-<tr><td class="tr_highlighted">Taxi 1 mile (Normal Tariff) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">3.22 $</span></td>
+<tr><td class="tr_highlighted">Taxi 1km (Normal Tariff) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">2.00 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
-1.61</span><span class="barLeft" style="width: 23px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 13px;"></span><span class="barTextRight">4.06</span></td>
+1.00</span><span class="barLeft" style="width: 23px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 13px;"></span><span class="barTextRight">2.52</span></td>
 </tr>
 <tr><td>Taxi 1hour Waiting (Normal Tariff) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">5.01 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
 4.00</span><span class="barLeft" style="width: 9px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 66px;"></span><span class="barTextRight">12.59</span></td>
 </tr>
-<tr><td class="tr_highlighted">Gasoline (1 gallon) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">1.87 $</span></td>
+<tr><td class="tr_highlighted">Gasoline (1 liter) </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">0.50 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
-1.17</span><span class="barLeft" style="width: 18px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 30px;"></span><span class="barTextRight">3.03</span></td>
+0.31</span><span class="barLeft" style="width: 18px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 30px;"></span><span class="barTextRight">0.80</span></td>
 </tr>
 <tr><td>Volkswagen Golf 1.4 90 KW Trendline (Or Equivalent New Car) </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">15,270.34 $</span></td>
 <td class="priceBarTd">
@@ -649,7 +630,7 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <div class="category_title">Utilities (Monthly)</div></th> <th class="highlighted_th th_no_highlight_a_right prices"> <a class="edit_href" href="https://www.numbeo.com/common/form.jsp?country=Iraq&amp;returnUrl=https%3A%2F%2Fwww.numbeo.com%2Fcost-of-living%2Fcountry_result.jsp%3Fcountry%3DIraq%26displayCurrency%3DUSD&amp;current=3&amp;section=true&amp;tracking=editHref" rel="nofollow"><img alt="" src="https://www.numbeo.com/images/baseline-edit.svg" style="vertical-align: baseline; display: inline-block;"/><span class="edit_link"> Edit </span></a></th>
 <th class="th_no_highlight prices"></th>
 </tr>
-<tr><td>Basic (Electricity, Heating, Cooling, Water, Garbage) for 915 sq ft Apartment </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">92.99 $</span></td>
+<tr><td>Basic (Electricity, Heating, Cooling, Water, Garbage) for 85m2 Apartment </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">92.99 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
 60.00</span><span class="barLeft" style="width: 17px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 39px;"></span><span class="barTextRight">167.75</span></td>
@@ -754,15 +735,15 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 <div class="category_title">Buy Apartment Price</div></th> <th class="highlighted_th th_no_highlight_a_right prices"> <a class="edit_href" href="https://www.numbeo.com/common/form.jsp?country=Iraq&amp;returnUrl=https%3A%2F%2Fwww.numbeo.com%2Fcost-of-living%2Fcountry_result.jsp%3Fcountry%3DIraq%26displayCurrency%3DUSD&amp;current=8&amp;section=true&amp;tracking=editHref" rel="nofollow"><img alt="" src="https://www.numbeo.com/images/baseline-edit.svg" style="vertical-align: baseline; display: inline-block;"/><span class="edit_link"> Edit </span></a></th>
 <th class="th_no_highlight prices"></th>
 </tr>
-<tr><td>Price per Square Feet to Buy Apartment in City Centre </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">119.99 $</span></td>
+<tr><td>Price per Square Meter to Buy Apartment in City Centre </td> <td class="priceValue" style="text-align: right"> <span class="first_currency">1,291.62 $</span></td>
 <td class="priceBarTd">
 <span class="barTextLeft">
-65.03</span><span class="barLeft" style="width: 22px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 46px;"></span><span class="barTextRight">234.21</span></td>
+700.00</span><span class="barLeft" style="width: 22px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 46px;"></span><span class="barTextRight">2,521.01</span></td>
 </tr>
-<tr><td class="tr_highlighted">Price per Square Feet to Buy Apartment Outside of Centre </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">64.79 $</span></td>
+<tr><td class="tr_highlighted">Price per Square Meter to Buy Apartment Outside of Centre </td> <td class="priceValue tr_highlighted" style="text-align: right"> <span class="first_currency">697.42 $</span></td>
 <td class="priceBarTd tr_highlighted">
 <span class="barTextLeft">
-31.79</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 48px;"></span><span class="barTextRight">127.57</span></td>
+342.14</span><span class="barLeft" style="width: 24px;"></span><span class="barMid"><span class="barMid-nocss">-</span></span><span class="barRight" style="width: 48px;"></span><span class="barTextRight">1,373.21</span></td>
 </tr>
 <tr> <th class="highlighted_th prices"><span class="category_icon_wrapper"><img alt="" class="category_icon" src="https://www.numbeo.com/images/categories/wallet-solid.svg"/>
 </span>
@@ -780,7 +761,7 @@ Currency:          <select id="displayCurrency" name="displayCurrency" onchange=
 </table>
 <h2>Prices in Iraq</h2>
 <div class="align_like_price_table">
-This country had 2901 entries in the past 12 months by 169 different contributors.
+This country had 2902 entries in the past 12 months by 170 different contributors.
 <br/>Last update: July 2022
 <br/>Our data for each country are based on all entries from all cities in that country.</div>
 <div id="sources_accordion_outer" name="sources_accordion_outer" tabindex="-1">
@@ -886,7 +867,7 @@ German Customer Service Agent - Lisbon</a>
           ['Transportation', 237.83],
           ['Clothing And Shoes', 47.74],
           ['Sports And Leisure', 165.18],
-          ['Markets', 605.24],
+          ['Markets', 605.18],
           ['Utilities (Monthly)', 158.28],
           ['Rent Per Month', 397.12],
           ['Restaurants', 257.65]
