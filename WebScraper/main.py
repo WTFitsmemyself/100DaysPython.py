@@ -2,7 +2,6 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup as Bs
 from lxml import etree
-from lxml.cssselect import CSSSelector
 
 names = []
 salary = []
