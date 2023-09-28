@@ -78,6 +78,7 @@ def who_win(listUser, listPC):
     else:
         print("You Win")
 
+
 is_continue = True
 while is_continue:
     WannaPlay = input("Do you want to play a game of BlackJack: Type 'y' or 'n': ").lower()
@@ -97,7 +98,7 @@ while is_continue:
         clear()
         print(logo)
         print(f"Your cards: [{yourCards[0]}, {yourCards[1]}], Current Score: {sumScore}")
-        print(f"Computer's first card: {computerCards[0]}")
+        # print(f"Computer's first card: {computerCards[0]}")
         HitOrPass = input("Type 'y' to get another card, type 'n' to pass: ").lower()
         while hitOrGO(HitOrPass) == True:
             edameDare(thirdRanduser,thirdRandPC)
