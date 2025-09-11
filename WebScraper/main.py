@@ -8,7 +8,7 @@ salary = []
 costs = []
 rents = []
 
-countries = ["Italy", "Iran", "Norway", "Finland", 'Iraq', 'Mexico', 'France', 'China', 'Sweden']
+countries = ["Italy", "Iran"]
 base_url = "https://www.numbeo.com/cost-of-living/country_result.jsp"
 
 for country in countries:
