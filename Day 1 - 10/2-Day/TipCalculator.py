@@ -6,5 +6,5 @@ tip_percentage = int(input("What percentage of tip you like to give(10, 12 or 15
 percent_bill = total_bill + ((tip_percentage/100)*total_bill)
 how_much_each = percent_bill/number_of_people
 
-print("each person should pay:" + str(round(how_much_each,3)))
+print(f"Each person should pay: ${(round(how_much_each,2))}")
 
