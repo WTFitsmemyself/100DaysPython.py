@@ -49,7 +49,7 @@ for country in countries:
 
     names.append(name_of_country[0])
     salary.append(str_salary_final)
-    costs.append(str_cost_final)
+    costs.append(str_cost_final) 
     rents.append(str_rent_final)
 
 df = pd.DataFrame({
