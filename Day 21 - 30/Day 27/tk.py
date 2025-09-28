@@ -11,4 +11,25 @@ my_label.pack()
 
 
 
+my_label['text'] = "NATO"
+my_label.config(text="New Text")
+
+
+#button
+
+def button_clicked():
+    my_label['text'] = input.get()
+
+button = tk.Button(window, text="Click Me", command=button_clicked)
+button.pack()
+
+
+
+#input
+input = tk.Entry()
+input.pack()
+input.get()
+
+
+
 window.mainloop()
