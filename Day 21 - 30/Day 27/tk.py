@@ -7,7 +7,7 @@ window.minsize(500, 400)
 
 #Label
 my_label = tk.Label(window, text="NATO", font=("Arial", 20, "bold"))
-my_label.pack()
+my_label.grid(column=0, row=0)
 
 
 
@@ -21,13 +21,16 @@ def button_clicked():
     my_label['text'] = input.get()
 
 button = tk.Button(window, text="Click Me", command=button_clicked)
-button.pack()
+button.grid(column=1, row=1)
 
+
+button_new = tk.Button(window, text="Click Me", command=button_clicked)
+button_new.grid(column=2, row=0)
 
 
 #input
 input = tk.Entry()
-input.pack()
+input.grid(column=3, row=2)
 input.get()
 
 
