@@ -1,7 +1,5 @@
 # Date: 2022/04/07
 # Import Libraries
-from importlib.resources import contents
-from tkinter import W
 import tarikh
 import datetime
 import os.path
@@ -14,9 +12,9 @@ month_now = int(date_spilit[1])
 day_now = int(date_spilit[2])
 
 #Check if file exists
-file = os.path.isfile('./counter.txt')
+file = os.path.isfile('counter.txt')
 if file == False:
-    file = open("counter.txt","w+")
+    file = open("counter.txt", "w+")
     file.write("0")
     file.close()
 
@@ -25,7 +23,7 @@ last_gardon_number = int(input("How many Gardon you produced today?: "))
 Shomare_Tamin_Konande = "S"
 Shomare_Sazande = "F9" 
 Shomare_Ghate = "AS"
-tarikh__shamsi = tarikh.gregorian_to_jalali(year_now,month_now,day_now,)
+tarikh__shamsi = tarikh.gregorian_to_jalali(year_now, month_now, day_now, )
 sal = 0
 mah = 0
 rooz = 0
@@ -210,7 +208,7 @@ def m(x):
     # print(f"m : {m}")
     return m
 
-f = open("./counter.txt","r")
+f = open("counter.txt", "r")
 for i in range(int(f.read())+1, last_gardon_number+1):
     if i < 10:
         Shomare_Serial = "0000" + str(i)
@@ -249,6 +247,6 @@ for i in range(int(f.read())+1, last_gardon_number+1):
         print("----------------------------------------------------------------")
         
 str_last_num = str(last_gardon_number)
-f = open("./counter.txt","w")
+f = open("counter.txt", "w")
 f.write(str_last_num)
 f.close
