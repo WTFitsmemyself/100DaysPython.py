@@ -1,8 +1,6 @@
 #Package
 from tkinter import *
 
-from click import command
-
 #Window setting
 window = Tk()
 window.config(pady=20, padx=20)
