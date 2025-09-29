@@ -7,10 +7,8 @@ window.config(padx=300, pady=400)
 
 
 #Label
-my_label = tk.Label(window, text="NATO", font=("Arial", 20, "bold"))
+my_label = tk.Label(window, text="NATO", font=("Arial", 20, "bold"), padx=20, pady=20)
 my_label.grid(column=0, row=0)
-
-my_label.config(padx=20, pady=20)
 
 my_label['text'] = "NATO"
 my_label.config(text="New Text")
