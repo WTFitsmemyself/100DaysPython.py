@@ -15,31 +15,50 @@ PADDING_Y = 50
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
+reps = 0
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
 def timer_start():
-    count_down(WORK_MIN * 60)
+    global reps
+    reps += 1
+
+    work_sec = WORK_MIN * 60
+    short_break_sec = SHORT_BREAK_MIN * 60
+    long_break_sec = LONG_BREAK_MIN * 60
+
+    if reps % 8 == 0:
+        count_down(long_break_sec)
+        timer_label.config(text=f"Break", fg=RED)
+    elif reps % 2 == 0:
+        count_down(short_break_sec)
+        timer_label.config(text=f"Break", fg=PINK)
+    else:
+        count_down(work_sec)
+        timer_label.config(text=f"Work", fg=GREEN)
+        check_mark_label.config(text=CHECK_MARK)
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
     count_min = math.floor(count / 60)
     count_sec = count % 60
 
-    if count_min < 10:
+    if int(count_min) < 10:
         count_min = "0" + str(count_min)
 
-    if count_sec == 0:
-        count_sec = "00"
+    if int(count_sec) == 0:
+        count_sec = "0"
 
-    if count_sec < 10:
+    if int(count_sec) < 10:
         count_sec = "0" + str(count_sec)
 
     canvas.itemconfig(timer_count, text=f"{count_min}:{count_sec}")
     if count > 0:
         window.after(1000, count_down, count - 1)
+    else:
+        timer_start()
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
@@ -64,7 +83,7 @@ reset_button = Button(window, text="Reset")
 reset_button.grid(column=2, row=2)
 
 
-check_mark_label = Label(window, text=CHECK_MARK, font=(FONT_NAME, 25), fg=GREEN)
+check_mark_label = Label(font=(FONT_NAME, 25), fg=GREEN)
 check_mark_label.grid(column=1, row=3)
 
 
