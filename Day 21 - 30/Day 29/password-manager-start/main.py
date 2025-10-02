@@ -1,6 +1,14 @@
 import secrets
 import string
 import math
+from tkinter import *
+
+
+CANVAS_WIDTH = 206
+CANVAS_HEIGHT = 224
+PADDING_X = 20
+PADDING_Y = 20
+FONT_NAME = "Courier"
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
 def simple_password(length=16):
@@ -166,4 +174,17 @@ def generate_complex_password(
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 # ---------------------------- UI SETUP ------------------------------- #
-print(complex_password(128))
+window = Tk()
+window.title("Pomodoro")
+window.config(padx=PADDING_X, pady=PADDING_Y)
+
+tomato_img = PhotoImage(file="./logo.png")
+canvas = Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
+canvas.create_image(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, image=tomato_img)
+canvas.grid(column=1, row=1)
+
+
+
+
+
+window.mainloop()

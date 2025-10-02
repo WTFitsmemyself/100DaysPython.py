@@ -31,20 +31,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="/WebScraper/dataFile.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="/WebScraper/products.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
