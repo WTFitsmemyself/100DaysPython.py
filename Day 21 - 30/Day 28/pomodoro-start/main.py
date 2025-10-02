@@ -59,6 +59,11 @@ def count_down(count):
         window.after(1000, count_down, count - 1)
     else:
         timer_start()
+        marks = ""
+        work_sessions = math.floor(reps / 2)
+        for _ in range(work_sessions):
+            marks += CHECK_MARK
+        check_mark_label.config(text=marks)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
