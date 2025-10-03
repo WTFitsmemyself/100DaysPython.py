@@ -4,8 +4,8 @@ import math
 from tkinter import *
 
 
-CANVAS_WIDTH = 206
-CANVAS_HEIGHT = 224
+CANVAS_WIDTH = 200
+CANVAS_HEIGHT = 200
 PADDING_X = 20
 PADDING_Y = 20
 FONT_NAME = "Courier"
@@ -174,14 +174,18 @@ def generate_complex_password(
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
 # ---------------------------- UI SETUP ------------------------------- #
+#Tk start
 window = Tk()
-window.title("Pomodoro")
+window.title("Password Manager")
+#config display
 window.config(padx=PADDING_X, pady=PADDING_Y)
-
-tomato_img = PhotoImage(file="./logo.png")
+#image creation
+lock_image = PhotoImage(file="./logo.png")
 canvas = Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
-canvas.create_image(CANVAS_WIDTH / 2, CANVAS_HEIGHT / 2, image=tomato_img)
-canvas.grid(column=1, row=1)
+canvas.create_image(100, 100, image=lock_image)
+canvas.grid(column=1, row=0)
+
+
 
 
 
