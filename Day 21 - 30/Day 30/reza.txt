@@ -1,0 +1,3 @@
+because[Errno 2] No such file or directory: 'reza.txt'
+
+WTF is going on
