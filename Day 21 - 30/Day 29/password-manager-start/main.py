@@ -185,9 +185,39 @@ canvas = Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
 canvas.create_image(100, 100, image=lock_image)
 canvas.grid(column=1, row=0)
 
+#label website
+web_label = Label(text="Website: ")
+web_label.grid(column=0, row=1)
+#label website
+username_label = Label(text="Username: ")
+username_label.grid(column=0, row=2)
+#label website
+password_label = Label(text="Password: ")
+password_label.grid(column=0, row=3)
 
 
+#entries
+website_entry = Entry(width=35)
+email_entry = Entry(width=35)
+password_entry = Entry()
 
+
+#Button generate
+def button_generate():
+    print("Do something")
+
+#calls action() when pressed
+button = Button(text="Generate Password", command=button_generate)
+button.grid(column=2, row=3)
+
+
+#Button add
+def button_add():
+    print("Do something")
+
+#calls action() when pressed
+button = Button(text="Add", command=button_add)
+button.grid(column=1, row=4, rowspan=5)
 
 
 
