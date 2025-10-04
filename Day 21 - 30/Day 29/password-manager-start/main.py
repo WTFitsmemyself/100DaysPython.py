@@ -2,18 +2,23 @@ import secrets
 import string
 import math
 from tkinter import *
+from tkinter import messagebox
+
 
 
 CANVAS_WIDTH = 200
 CANVAS_HEIGHT = 200
-PADDING_X = 20
-PADDING_Y = 20
+PADDING_X = 50
+PADDING_Y = 50
 FONT_NAME = "Courier"
+USER_EMAIL = "itshosyn@gmail.com"
 
 # ---------------------------- PASSWORD GENERATOR ------------------------------- #
-def simple_password(length=16):
+def simple_password(length=24):
     alphabet = string.ascii_letters + string.digits + string.punctuation
-    return ''.join(secrets.choice(alphabet) for _ in range(length))
+    passw = ''.join(secrets.choice(alphabet) for _ in range(length))
+    password_entry.delete(0, END)
+    password_entry.insert(0, passw)
 
 def complex_password(
         length=16,
@@ -84,7 +89,7 @@ def complex_password(
         return ''.join(password_chars)
 
 def generate_complex_password(
-    length=16,
+    length=7,
     include_upper=True,
     include_lower=True,
     include_digits=True,
@@ -164,15 +169,37 @@ def generate_complex_password(
         # Shuffle securely
         secrets.SystemRandom().shuffle(chars)
         pwd = ''.join(chars)
-
         # Re-roll if sequential not allowed
         if no_sequences and has_sequence(pwd):
             return generate_one()
 
-        return pwd
+        newpassword = pwd
+        password_entry.delete(0, END)
+        password_entry.insert(0, newpassword)
+        return None
+
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
+def save_password():
+    website = website_entry.get()
+    username = email_entry.get()
+    password = password_entry.get()
 
+    if website == "" or username == "" or password == "":
+        messagebox.showwarning(title="Oops", message="Please fill out all fields!")
+    else:
+        # Confirm with user
+        is_ok = messagebox.askokcancel(title=website, message=f"These are the details entered:\n\n"
+                                                              f"Website: {website}\n"
+                                                              f"Email: {username}\n"
+                                                              f"Password: {password}\n\nSave it?")
+        if is_ok:
+            with open("data_user_pass.txt", "a") as file:
+                file.write(f"{website} | {username} | {password}\n")
+
+            # Clear entries
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
 # ---------------------------- UI SETUP ------------------------------- #
 #Tk start
 window = Tk()
@@ -181,15 +208,15 @@ window.title("Password Manager")
 window.config(padx=PADDING_X, pady=PADDING_Y)
 #image creation
 lock_image = PhotoImage(file="./logo.png")
-canvas = Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT)
-canvas.create_image(100, 100, image=lock_image)
+canvas = Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT, highlightthickness=0)
+canvas.create_image(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, image=lock_image)
 canvas.grid(column=1, row=0)
 
 #label website
 web_label = Label(text="Website: ")
 web_label.grid(column=0, row=1)
 #label website
-username_label = Label(text="Username: ")
+username_label = Label(text="E-mail / Username: ")
 username_label.grid(column=0, row=2)
 #label website
 password_label = Label(text="Password: ")
@@ -197,27 +224,22 @@ password_label.grid(column=0, row=3)
 
 
 #entries
-website_entry = Entry(width=35)
-email_entry = Entry(width=35)
-password_entry = Entry()
+website_entry = Entry(width=38)
+website_entry.grid(column=1, row=1, columnspan=2)
+email_entry = Entry(width=38)
+email_entry.insert(END, USER_EMAIL)
+email_entry.grid(column=1, row=2, columnspan=2)
+password_entry = Entry(width=21)
+password_entry.grid(column=1, row=3)
 
-
-#Button generate
-def button_generate():
-    print("Do something")
 
 #calls action() when pressed
-button = Button(text="Generate Password", command=button_generate)
+button = Button(text="Generate Password", command=simple_password)
 button.grid(column=2, row=3)
 
-
-#Button add
-def button_add():
-    print("Do something")
-
 #calls action() when pressed
-button = Button(text="Add", command=button_add)
-button.grid(column=1, row=4, rowspan=5)
+button = Button(text="Add", width=36, command=save_password)
+button.grid(column=1, row=4, columnspan=2)
 
 
 
