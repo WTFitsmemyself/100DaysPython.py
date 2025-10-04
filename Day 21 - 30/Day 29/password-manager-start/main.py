@@ -200,6 +200,7 @@ def save_password():
             # Clear entries
             website_entry.delete(0, END)
             password_entry.delete(0, END)
+
 # ---------------------------- UI SETUP ------------------------------- #
 #Tk start
 window = Tk()
