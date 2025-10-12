@@ -4,8 +4,6 @@ import math
 from tkinter import *
 from tkinter import messagebox
 
-
-
 CANVAS_WIDTH = 200
 CANVAS_HEIGHT = 200
 PADDING_X = 50
@@ -21,14 +19,14 @@ def simple_password(length=24):
     password_entry.insert(0, passw)
 
 def complex_password(
-        length=16,
-        include_upper=True,
-        include_lower=True,
-        include_digits=True,
-        include_symbols=True,
-        exclude_ambiguous=True,
-        no_repeats=False,
-        begin_with_letter=False
+    length=16,
+    include_upper=True,
+    include_lower=True,
+    include_digits=True,
+    include_symbols=True,
+    exclude_ambiguous=True,
+    no_repeats=False,
+    begin_with_letter=False
 ):
 
         # Character sets

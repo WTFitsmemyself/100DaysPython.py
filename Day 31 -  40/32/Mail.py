@@ -1,7 +1,7 @@
 import smtplib
 
 myemail = 'itshosyn@gmail.com'
-password = 'foqvpvisiincxkip'
+password = '-----------------'
 
 with smtplib.SMTP('smtp.gmail.com', 587) as s:
     s.starttls()

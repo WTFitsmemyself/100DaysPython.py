@@ -7,7 +7,7 @@ import os
 # Email credentials and addresses
 sender_email = "itshosyn@gmail.com"
 receiver_email = "h.nouri.taksatsp@gmail.com"
-password = "foqvpvisiincxkip"  # Use Gmail app password
+password = "------------------"  # Use Gmail app password
 
 # Create the email message
 msg = EmailMessage()
