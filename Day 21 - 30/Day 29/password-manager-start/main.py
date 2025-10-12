@@ -203,8 +203,10 @@ def save_password():
 #Tk start
 window = Tk()
 window.title("Password Manager")
+
 #config display
 window.config(padx=PADDING_X, pady=PADDING_Y)
+
 #image creation
 lock_image = PhotoImage(file="./logo.png")
 canvas = Canvas(width=CANVAS_WIDTH, height=CANVAS_HEIGHT, highlightthickness=0)
@@ -214,13 +216,14 @@ canvas.grid(column=1, row=0)
 #label website
 web_label = Label(text="Website: ")
 web_label.grid(column=0, row=1)
+
 #label website
 username_label = Label(text="E-mail / Username: ")
 username_label.grid(column=0, row=2)
+
 #label website
 password_label = Label(text="Password: ")
 password_label.grid(column=0, row=3)
-
 
 #entries
 website_entry = Entry(width=38)
