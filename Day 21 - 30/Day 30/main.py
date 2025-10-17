@@ -18,5 +18,6 @@ else:
     print(content)
 
 finally:
+    raise ValueError ("Type is not Valid")
     file.close()
     print('File closed')
